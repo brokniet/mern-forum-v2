@@ -14,9 +14,26 @@
 }
 
 .title-container {
+  margin-left: 10%;
   width: 90%;
 }
 
 .add-entry {
   height: fit-content;
+}
+
+.posts {
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.posts li {
+  display: block;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin: 7.5px 0;
+  padding: 2px;
+  width: 40%;
 }
