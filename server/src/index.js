@@ -24,6 +24,12 @@ app.post('/posts', async (req, res) => {
     res.json(createdPost);
 });
 
+app.delete("/posts/:postId", async (req, res) => {
+    const postId = req.params.postId;
+    const post = await Post.findByIdAndDelete(postId);
+    res.json(post);
+});
+
 mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log(`listening on port ${process.env.PORT}`);
     app.listen(process.env.PORT);
