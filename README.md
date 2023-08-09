@@ -14,9 +14,10 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 
 # Objetivos secundarios:
 
-1. Poder filtrar los posteos por título
-2. Añadir pantalla de carga
-3. Poder scrollear a través de los posteos (o tener varias páginas de los mismos)
-4. Agregar géneros a los posteos
-5. Poder filtrar los posteos por género
-6. Agregar usuarios con distintos permisos
+1. Agregar navegación
+2. Poder filtrar los posteos por título
+3. Añadir pantalla de carga
+4. Poder scrollear a través de los posteos (o tener varias páginas de los mismos)
+5. Agregar géneros a los posteos
+6. Poder filtrar los posteos por género
+7. Agregar usuarios con distintos permisos

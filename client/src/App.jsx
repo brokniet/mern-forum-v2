@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { deletePost } from './api/deletePost';
+import { getPosts } from './api/getPosts';
 import './App.css'
 
 function App() {
@@ -7,17 +10,14 @@ function App() {
 
   useEffect(() => {
     async function fetchPosts() {
-      const response = await fetch('http://localhost:5000/posts');
-      const newPosts = await response.json();
+      const newPosts = await getPosts();
       setPosts(newPosts);
     }
     fetchPosts();
   }, []);
 
   async function handleDeletePost(postId) {
-    await fetch(`http://localhost:5000/posts/${postId}`, {
-      method: 'DELETE'
-    });
+    await deletePost(postId);
     setPosts(posts.filter(post => post._id !== postId));
   }
 
@@ -36,7 +36,7 @@ function App() {
             posts.map(post => {
               return(
                 <li key={post._id}>
-                  {post.title}
+                  <Link to={`posts/${post._id}`}>{post.title}</Link>
                   <button onClick={() => handleDeletePost(post._id)}>X</button>  
                 </li>
               )
