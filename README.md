@@ -10,7 +10,7 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 4. Mostrar posteos en la UI ✅
 5. Poder clickear posteos para abrirlos y ver el contenido explayado
 6. Poder crear posteos desde la UI
-7. Poder eliminar posteos desde la UI
+7. Poder eliminar posteos desde la UI ✅
 
 # Objetivos secundarios:
 
