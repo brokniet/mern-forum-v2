@@ -8,7 +8,7 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 2. Generar POST endpoint ✅
 3. Generar DELETE endpoint ✅
 4. Mostrar posteos en la UI ✅
-5. Poder clickear posteos para abrirlos y ver el contenido explayado
+5. Poder clickear posteos para abrirlos y ver el contenido explayado ✅
 6. Poder crear posteos desde la UI
 7. Poder eliminar posteos desde la UI ✅
 
