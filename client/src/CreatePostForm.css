@@ -1,0 +1,21 @@
+.create-form {
+    margin: 0 auto;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: x-large;
+    font-weight: 600;
+    align-items: center;
+}
+
+.create-form > input {
+    width: 46%;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.create-form > textarea {
+    padding: 8px;
+    font-weight: 600;
+}

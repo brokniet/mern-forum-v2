@@ -25,10 +25,12 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="title-container">
-          <h1 className="title">Welcome to my Forum!</h1>
+          <h1 className="title">Welcome to my Forum</h1>
           <h5 className="subtitle">Feel free to leave your feedback or anything you like</h5>
         </div>
-        <button className="add-entry">Add entry</button>
+          <Link to="posts/createPost">
+            <button className="add-entry">Add entry</button>
+          </Link>
       </header>
       <main className="main">
         <ul className="posts">

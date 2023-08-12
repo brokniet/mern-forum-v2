@@ -33,5 +33,5 @@ export default function Post() {
             </section>
         </main>
         </div>
-    )
-}
+    );
+};

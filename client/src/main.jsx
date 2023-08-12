@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import Post from './Post.jsx'
+import CreatePostForm from './CreatePostForm.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/posts/:postId',
     element: <Post />,
+  },
+  {
+    path: '/posts/createPost',
+    element: <CreatePostForm />,
   },
 ]);
 
