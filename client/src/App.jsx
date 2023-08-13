@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     async function fetchPosts() {
       const newPosts = await getPosts();
-      setPosts(newPosts);
+      setPosts(newPosts.reverse());
     }
     fetchPosts();
   }, []);
