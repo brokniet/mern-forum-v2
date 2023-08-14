@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { deletePost } from './api/deletePost';
-import { getPosts } from './api/getPosts';
-import './App.css'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { deletePost } from "./api/deletePost";
+import { getPosts } from "./api/getPosts";
+import "./App.css";
 
 function App() {
-
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -18,7 +17,7 @@ function App() {
 
   async function handleDeletePost(postId) {
     await deletePost(postId);
-    setPosts(posts.filter(post => post._id !== postId));
+    setPosts(posts.filter((post) => post._id !== postId));
   }
 
   return (
@@ -26,28 +25,28 @@ function App() {
       <header className="header">
         <div className="title-container">
           <h1 className="title">Welcome to my Forum</h1>
-          <h5 className="subtitle">Feel free to leave your feedback or anything you like</h5>
+          <h5 className="subtitle">
+            Feel free to leave your feedback or anything you like
+          </h5>
         </div>
-          <Link to="posts/createPost">
-            <button className="add-entry">Add entry</button>
-          </Link>
+        <Link to="posts/createPost">
+          <button className="add-entry">Add entry</button>
+        </Link>
       </header>
       <main className="main">
         <ul className="posts">
-          {
-            posts.map(post => {
-              return(
-                <li key={post._id}>
-                  <Link to={`posts/${post._id}`}>{post.title}</Link>
-                  <button onClick={() => handleDeletePost(post._id)}>X</button>  
-                </li>
-              )
-            })
-          }
+          {posts.map((post) => {
+            return (
+              <li key={post._id}>
+                <Link to={`posts/${post._id}`}>{post.title}</Link>
+                <button onClick={() => handleDeletePost(post._id)}>X</button>
+              </li>
+            );
+          })}
         </ul>
       </main>
     </div>
-  ) 
+  );
 }
 
-export default App
+export default App;

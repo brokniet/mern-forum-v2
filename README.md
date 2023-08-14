@@ -14,8 +14,7 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 
 # Objetivos secundarios:
 
-
-1. Agregar navegación
+1. Agregar navegación ✅
 2. Poder filtrar los posteos por título
 3. Añadir pantalla de carga
 4. Poder scrollear a través de los posteos (o tener varias páginas de los mismos)
@@ -24,3 +23,4 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 7. Agregar usuarios con distintos permisos
 8. Poder modificar posteos si los subiste vos
 9. Agregar manejo de errores
+10. Agregar fecha a los posteos
