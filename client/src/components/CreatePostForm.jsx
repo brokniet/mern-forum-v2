@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./CreatePostForm.css";
-import { createPost } from "./api/createPost";
+import "../styles/CreatePostForm.css";
+import { createPost } from "../api/createPost";
 
 export default function CreatePostForm() {
   const [title, setTitle] = useState("");

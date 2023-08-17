@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getPost } from "./api/getPost";
-import "./Post.css";
+import { getPost } from "../api/getPost";
+import "../styles/Post.css";
 
 export default function Post() {
   const { postId } = useParams();

@@ -22,15 +22,16 @@
 
 .header {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 18fr 1fr;
 }
 
 .back-button {
-  height: fit-content;
+  grid-column: 0;
   font-size: x-large;
   justify-self: start;
 }
 
 .title {
-  width: 95%;
-  margin-right: 5%;
+  text-align: center;
 }
