@@ -24,7 +24,6 @@ function App() {
   }
 
   function handleSearch() {
-    //agregar use state para filteredPost asi no se borra el fetching de los datos, sacar los filtered de los post de mongo
     setFilteredPosts(
       posts.filter((post) => post.title.toLowerCase().includes(search))
     );
