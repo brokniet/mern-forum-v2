@@ -5,7 +5,7 @@ import "../styles/App.css";
 function App() {
   return (
     <div className="app">
-      <header className="header">
+      <header className="mainpage-header">
         <div className="title-container">
           <h1 className="title">Welcome to my Forum</h1>
         </div>

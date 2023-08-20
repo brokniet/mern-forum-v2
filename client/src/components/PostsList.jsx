@@ -43,7 +43,12 @@ export default function PostsList() {
             return (
               <li key={post._id}>
                 <Link to={`posts/${post._id}`}>{post.title}</Link>
-                <button onClick={() => handleDeletePost(post._id)}>X</button>
+                <div className="buttons-container">
+                  <Link to={`posts/editPost/${post._id}`}>
+                    <button className="edit-button">✏️</button>
+                  </Link>
+                  <button onClick={() => handleDeletePost(post._id)}>❌</button>
+                </div>
               </li>
             );
           })}

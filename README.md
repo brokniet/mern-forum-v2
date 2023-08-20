@@ -21,6 +21,6 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 5.  🚧 Agregar géneros a los posteos
 6.  🚧 Poder filtrar los posteos por género
 7.  🚧 Agregar usuarios con distintos permisos
-8.  🚧 Poder modificar posteos si los subiste vos
+8.  ✅ Poder modificar posteos
 9.  🚧 Agregar manejo de errores
 10. 🚧 Agregar fecha a los posteos

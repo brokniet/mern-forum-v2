@@ -4,7 +4,8 @@ import App from "./components/App";
 import "./styles/index.css";
 import Post from "./components/Post.jsx";
 import CreatePostForm from "./components/CreatePostForm";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import EditPostForm from "./components/EditPostForm";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/posts/createPost",
     element: <CreatePostForm />,
+  },
+  {
+    path: "/posts/editPost/:postId",
+    element: <EditPostForm />,
   },
 ]);
 

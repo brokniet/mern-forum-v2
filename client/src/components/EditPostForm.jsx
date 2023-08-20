@@ -1,18 +1,20 @@
-import "../styles/CreatePostForm.css";
+// import "../styles/CreatePostForm.css";
 import PostForm from "./PostForm";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-export default function CreatePostForm() {
+export default function EditPostForm() {
+  const { postId } = useParams();
+
   return (
     <div className="app">
       <header className="header">
         <Link to="/">
           <button className="back-button">←</button>
         </Link>
-        <h1 className="title">Create a post</h1>
+        <h1 className="title">Edit post</h1>
       </header>
       <main className="main">
-        <PostForm />
+        <PostForm postId={`${postId}`} />
       </main>
     </div>
   );

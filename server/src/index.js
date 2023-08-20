@@ -6,7 +6,7 @@ import { getPostsController } from "./controllers/getPostsController.js";
 import { deletePostController } from "./controllers/deletePostController.js";
 import { createPostController } from "./controllers/createPostController.js";
 import { getPostController } from "./controllers/getPostController.js";
-import { getPostsByTitle } from "./controllers/getPostsByTitle.js";
+import { editPostController } from "./controllers/editPostController.js";
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.get("/posts", getPostsController);
 app.post("/posts", createPostController);
 app.delete("/posts/:postId", deletePostController);
 app.get("/posts/:postId", getPostController);
-// app.get("/post/filter?", getPostsByTitle);
+app.post("/posts/editPost/:postId", editPostController);
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
   console.log(`listening on port ${process.env.PORT}`);
