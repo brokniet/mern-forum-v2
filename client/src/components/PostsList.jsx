@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deletePost } from "../api/deletePost";
 import { getPosts } from "../api/getPosts";
+import Popup from "reactjs-popup";
 import "../styles/App.css";
 
 export default function PostsList() {
@@ -47,7 +48,30 @@ export default function PostsList() {
                   <Link to={`posts/editPost/${post._id}`}>
                     <button className="edit-button">✏️</button>
                   </Link>
-                  <button onClick={() => handleDeletePost(post._id)}>❌</button>
+                  <Popup trigger={<button>❌</button>} modal>
+                    {(close) => (
+                      <div className="delete-modal">
+                        <span className="delete-modal-title">
+                          Are you sure you want to delete the post?
+                        </span>
+                        <div className="delete-modal-button-container">
+                          <button
+                            className="delete-modal-button"
+                            onClick={() => handleDeletePost(post._id)}
+                          >
+                            Yes
+                          </button>
+                          <button
+                            className="delete-modal-button"
+                            onClick={() => close()}
+                          >
+                            No
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </Popup>
+                  {/* <button onClick={() => handleDeletePost(post._id)}>❌</button> */}
                 </div>
               </li>
             );
