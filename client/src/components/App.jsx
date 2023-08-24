@@ -7,7 +7,7 @@ function App() {
     <div className="app">
       <header className="mainpage-header">
         <div className="title-container">
-          <h1 className="title">Welcome to my Forum</h1>
+          <h1 className="title">Chaotic Forum</h1>
         </div>
         <Link to="posts/createPost">
           <button className="add-entry">Add entry</button>

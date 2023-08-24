@@ -22,16 +22,11 @@
 
 .header {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 18fr 1fr;
+  position: relative;
 }
 
 .back-button {
-  grid-column: 0;
-  font-size: x-large;
-  justify-self: start;
-}
-
-.title {
-  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

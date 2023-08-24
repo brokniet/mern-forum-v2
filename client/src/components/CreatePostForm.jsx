@@ -9,7 +9,7 @@ export default function CreatePostForm() {
         <Link to="/">
           <button className="back-button">←</button>
         </Link>
-        <h1 className="title">Create a post</h1>
+        <h1 className="title">Create post</h1>
       </header>
       <main className="main">
         <PostForm />

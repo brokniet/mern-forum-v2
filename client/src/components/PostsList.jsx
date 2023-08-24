@@ -71,7 +71,6 @@ export default function PostsList() {
                       </div>
                     )}
                   </Popup>
-                  {/* <button onClick={() => handleDeletePost(post._id)}>❌</button> */}
                 </div>
               </li>
             );
