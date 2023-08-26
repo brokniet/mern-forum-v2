@@ -16,7 +16,7 @@ MERN FORUM es mi primer práctica con el MERN stack. Mi objetivo y la versión m
 
 1.  ✅ Agregar navegación
 2.  ✅ Poder filtrar los posteos por título
-3.  🚧 Añadir pantalla de carga
+3.  ✅ Añadir pantalla de carga
 4.  🚧 Poder scrollear a través de los posteos (o tener varias páginas de los mismos)
 5.  ✅ Poder modificar posteos
 6.  🚧 Agregar manejo de errores
