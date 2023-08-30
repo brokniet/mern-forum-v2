@@ -24,7 +24,7 @@ export default function Post() {
         </Link>
         <h1 className="title">{post.title}</h1>
       </header>
-      <main className="main">
+      <main className="post-container">
         <section className="post">
           <p>{post.content}</p>
         </section>

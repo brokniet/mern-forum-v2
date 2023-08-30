@@ -15,7 +15,6 @@ export default function PostsList() {
       const newPosts = await getPosts();
       setPosts(newPosts.reverse());
       setIsLoading(false);
-      console.log(newPosts);
     }
     fetchPosts();
   }, []);
@@ -28,7 +27,7 @@ export default function PostsList() {
   return (
     <>
       {isLoading ? (
-        <div class="custom-loader"></div>
+        <div className="custom-loader"></div>
       ) : (
         <>
           <form

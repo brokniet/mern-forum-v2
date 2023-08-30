@@ -1,14 +1,14 @@
 .back-button {
-  height: fit-content;
   font-size: x-large;
-  justify-self: start;
 }
 
-/* .title {
-  width: 95%;
-  margin-right: 5%;
-} */
-
-.header {
+.post-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.post {
+  width: 60%;
+  font-size: larger;
 }

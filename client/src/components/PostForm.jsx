@@ -19,10 +19,18 @@ export default function PostForm(props) {
     fetchPost();
   }, []);
 
-  async function handleSubmitPost() {
+  async function handleSubmitPost(e) {
+    if (title.length < 4 || content.length < 10) {
+      return handleInvalidSubmission(e);
+    }
     props.postId
       ? await editPost(title, content, props.postId)
       : await createPost(title, content);
+  }
+
+  function handleInvalidSubmission(e) {
+    e.preventDefault();
+    alert("Either the title or content are too short. Please try again.");
   }
 
   return (
@@ -31,7 +39,7 @@ export default function PostForm(props) {
       <input
         id="title-input"
         type="text"
-        maxLength="48"
+        maxLength="40"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
@@ -41,10 +49,11 @@ export default function PostForm(props) {
         cols="80"
         rows="15"
         value={content}
+        maxLength="1000"
         onChange={(e) => setContent(e.target.value)}
       ></textarea>
       <Link to="/">
-        <button onClick={handleSubmitPost}>Submit</button>
+        <button onClick={(e) => handleSubmitPost(e)}>Submit</button>
       </Link>
     </form>
   );
