@@ -15,6 +15,7 @@ export default function PostsList() {
       const newPosts = await getPosts();
       setPosts(newPosts.reverse());
       setIsLoading(false);
+      console.log(newPosts);
     }
     fetchPosts();
   }, []);

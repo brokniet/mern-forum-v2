@@ -19,6 +19,10 @@ app.delete("/posts/:postId", deletePostController);
 app.get("/posts/:postId", getPostController);
 app.post("/posts/editPost/:postId", editPostController);
 
+app.use((req, res) => {
+  res.status(404).send("<h1>404 Not Found :/</h1>");
+});
+
 mongoose.connect(process.env.MONGO_URL).then(() => {
   console.log(`listening on port ${process.env.PORT}`);
   app.listen(process.env.PORT);

@@ -24,6 +24,10 @@ const router = createBrowserRouter([
     path: "/posts/editPost/:postId",
     element: <EditPostForm />,
   },
+  {
+    path: "*",
+    element: <h1>404 Not Found :/</h1>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
