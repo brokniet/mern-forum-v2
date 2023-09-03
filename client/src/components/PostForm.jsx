@@ -4,6 +4,7 @@ import "../styles/CreatePostForm.css";
 import { createPost } from "../api/createPost";
 import { getPost } from "../api/getPost";
 import { editPost } from "../api/editPost";
+import { validatePost } from "../others/validations";
 
 export default function PostForm(props) {
   const [title, setTitle] = useState("");
@@ -20,18 +21,37 @@ export default function PostForm(props) {
   }, []);
 
   async function handleSubmitPost(e) {
-    if (title.length < 4 || content.length < 10) {
-      return handleInvalidSubmission(e);
+    try {
+      // const postId = props.postId || null;
+      validatePost(title, content, props.postId);
+    } catch (error) {
+      //nunca llega a catchear el error, agregar handling en 'validations' directamente
+      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+      e.preventDefault();
+      if (error instanceof ConnectionError) {
+        //agregar esta logica en validations
+        setTimeout(() => {
+          validatePost(title, content, props.postId);
+        }, 2000);
+      }
+      if (error instanceof ValidationError) {
+        alert(error.message);
+        //agregar ui modal en vez del alert
+      }
     }
-    props.postId
-      ? await editPost(title, content, props.postId)
-      : await createPost(title, content);
+
+    // if (title.length < 4 || content.length < 10) {
+    //   return handleInvalidSubmission(e);
+    // }
+    // props.postId
+    //   ? await editPost(title, content, props.postId)
+    //   : await createPost(title, content);
   }
 
-  function handleInvalidSubmission(e) {
-    e.preventDefault();
-    alert("Either the title or content are too short. Please try again.");
-  }
+  // function handleInvalidSubmission(e) {
+  //   e.preventDefault();
+  //   alert("Either the title or content are too short. Please try again.");
+  // }
 
   return (
     <form action="/posts" className="create-form">

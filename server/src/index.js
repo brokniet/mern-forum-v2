@@ -20,7 +20,7 @@ app.get("/posts/:postId", getPostController);
 app.post("/posts/editPost/:postId", editPostController);
 
 app.use((req, res) => {
-  res.status(404).send("<h1>404 Not Found :/</h1>");
+  res.status(404).send("404 Not Found :/");
 });
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
