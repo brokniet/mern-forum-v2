@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import helmet from "helmet";
 import "dotenv/config";
 import { getPostsController } from "./controllers/getPostsController.js";
 import { deletePostController } from "./controllers/deletePostController.js";
@@ -11,6 +12,7 @@ import { editPostController } from "./controllers/editPostController.js";
 const app = express();
 
 app.use(express.json());
+app.use(helmet());
 app.use(cors());
 
 app.get("/posts", getPostsController);

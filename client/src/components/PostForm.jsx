@@ -21,37 +21,9 @@ export default function PostForm(props) {
   }, []);
 
   async function handleSubmitPost(e) {
-    try {
-      // const postId = props.postId || null;
-      validatePost(title, content, props.postId);
-    } catch (error) {
-      //nunca llega a catchear el error, agregar handling en 'validations' directamente
-      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-      e.preventDefault();
-      if (error instanceof ConnectionError) {
-        //agregar esta logica en validations
-        setTimeout(() => {
-          validatePost(title, content, props.postId);
-        }, 2000);
-      }
-      if (error instanceof ValidationError) {
-        alert(error.message);
-        //agregar ui modal en vez del alert
-      }
-    }
-
-    // if (title.length < 4 || content.length < 10) {
-    //   return handleInvalidSubmission(e);
-    // }
-    // props.postId
-    //   ? await editPost(title, content, props.postId)
-    //   : await createPost(title, content);
+    const isValidationOk = await validatePost(title, content, props.postId);
+    if (!isValidationOk) e.preventDefault();
   }
-
-  // function handleInvalidSubmission(e) {
-  //   e.preventDefault();
-  //   alert("Either the title or content are too short. Please try again.");
-  // }
 
   return (
     <form action="/posts" className="create-form">
