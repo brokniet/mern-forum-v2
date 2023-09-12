@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/CreatePostForm.css";
-import { createPost } from "../api/createPost";
 import { getPost } from "../api/getPost";
-import { editPost } from "../api/editPost";
 import { validatePost } from "../others/validations";
 
 export default function PostForm(props) {
@@ -20,9 +18,8 @@ export default function PostForm(props) {
     fetchPost();
   }, []);
 
-  async function handleSubmitPost(e) {
-    const isValidationOk = await validatePost(title, content, props.postId);
-    if (!isValidationOk) e.preventDefault();
+  async function handleSubmitPost() {
+    await validatePost(title, content, props.postId);
   }
 
   return (
@@ -45,7 +42,7 @@ export default function PostForm(props) {
         onChange={(e) => setContent(e.target.value)}
       ></textarea>
       <Link to="/">
-        <button onClick={(e) => handleSubmitPost(e)}>Submit</button>
+        <button onClick={handleSubmitPost}>Submit</button>
       </Link>
     </form>
   );

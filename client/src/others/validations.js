@@ -14,28 +14,15 @@ export const validatePost = async (title, content, postId) => {
       throw new ValidationError("invalid post id");
 
     if (postId) {
-      editPost(title, content, postId)
-        .then(() => {
-          return true;
-        })
-        .catch(() => {
-          throw new ConnectionError("database is not available");
-        });
+      editPost(title, content, postId).catch(() => {
+        throw new ConnectionError("database is not available");
+      });
     } else {
-      createPost(title, content)
-        .then(() => {
-          return true;
-        })
-        .catch(() => {
-          throw new ConnectionError("database is not available");
-        });
+      createPost(title, content).catch(() => {
+        throw new ConnectionError("database is not available");
+      });
     }
   } catch (error) {
-    if (error instanceof ValidationError) {
-      //returnear false y mostrar modal ui, prevenir default
-    }
-    if (error instanceof ConnectionError) {
-      //returnear false, reintentar la conexion o cortarla, mostrar ui correspondiente
-    }
+    alert(error.message);
   }
 };
