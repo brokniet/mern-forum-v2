@@ -39,10 +39,19 @@ li {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid #646cff;
   margin: 7.5px 0;
   padding: 10px;
   width: 70%;
+}
+
+li > a {
+  color: white;
+  width: 90%;
+  text-align: start;
+}
+
+.buttons-containter {
 }
 
 .edit-button {

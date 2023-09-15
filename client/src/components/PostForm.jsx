@@ -35,8 +35,6 @@ export default function PostForm(props) {
       <label htmlFor="content-textarea">Content</label>
       <textarea
         id="content-textarea"
-        cols="80"
-        rows="15"
         value={content}
         maxLength="1000"
         onChange={(e) => setContent(e.target.value)}

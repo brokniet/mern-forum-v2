@@ -10,7 +10,7 @@
 }
 
 .create-form > input {
-  width: 46%;
+  width: 20rem;
   padding: 8px;
   font-weight: 600;
 }
@@ -18,6 +18,8 @@
 .create-form > textarea {
   padding: 8px;
   font-weight: 600;
+  width: 40rem;
+  height: 12rem;
 }
 
 .header {
