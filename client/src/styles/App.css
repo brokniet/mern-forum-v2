@@ -51,11 +51,18 @@ li > a {
   text-align: start;
 }
 
-.buttons-containter {
+.buttons-container {
+  display: grid;
+  grid-template-areas: "edit delete";
+  gap: 5px;
 }
 
 .edit-button {
-  margin-right: 5px;
+  grid-area: edit;
+}
+
+.delete-button {
+  grid-area: delete;
 }
 
 .filters-container {
